@@ -5,8 +5,8 @@ import urllib.request
 import re
 from selenium import webdriver
 def fetching_ESI_JS_FROM_PAGE():
-    data=pd.read_csv('F:/URLs.csv')
-    dim_data=pd.read_csv('F:/cm_dim_data.csv')
+    data=pd.read_csv('C:\URLs.csv')
+    dim_data=pd.read_csv('C:\cm_dim_data.csv')
 
     cm_dimension_id = []
     for cm_dim in dim_data['cm_dimension_id']:
@@ -30,7 +30,7 @@ def fetching_ESI_JS_FROM_PAGE():
     #print(cm_dim_temp_dict)
 
     for url_name in data['URL']:
-        browser = webdriver.Firefox(executable_path="C:\\Users\\ankit.vashishth\\PycharmProjects\\Projects\\geckodriver.exe")
+        browser = webdriver.Firefox(executable_path="C:\\Users\\ankit.vashishth\\Downloads\\geckodriver.exe")
         browser.get(url_name)
         soup = bs.BeautifulSoup(browser.page_source, "html.parser")
         ESI_ad_unit = re.findall(r"<!-- \d{6}", str(soup))
