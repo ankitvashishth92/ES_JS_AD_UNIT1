@@ -5,8 +5,8 @@ import urllib.request
 import re
 from selenium import webdriver
 def fetching_ESI_JS_FROM_PAGE():
-    data=pd.read_csv('C:\URLs.csv')
-    dim_data=pd.read_csv('C:\cm_dim_data.csv')
+    data=pd.read_csv("C:\URLs.csv")
+    dim_data=pd.read_csv("C:\cm_dim_data.csv")
 
     cm_dimension_id = []
     for cm_dim in dim_data['cm_dimension_id']:
